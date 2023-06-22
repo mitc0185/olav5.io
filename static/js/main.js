@@ -38,7 +38,9 @@
 						images: {
 							'images/bg01.jpg': 'center',
 							'images/bg02.jpg': 'center',
-							'images/bg03.jpg': 'center'
+							'images/bg03.jpg': 'center',
+							'images/bg04.jpg': 'center',
+							'images/bg05.jpg': 'center'
 						},
 
 					// Delay.
@@ -158,10 +160,18 @@
 							// Enable submit.
 								$submit.disabled = false;
 
-							// Show message.
-								$message._show('success', 'Thank you!');
-								//$message._show('failure', 'Something went wrong. Please try again.');
+							// Fetch URL w/ email address in param
 
+								fetch('https://127.0.0.1:1112/?email=foo', {
+									method: "GET"
+								})
+								.then((response) => {
+									$message._show('success', 'Thank you!');
+								})
+								.catch((error) => {
+									$message._show('failure', 'There was an error.');
+
+								});
 						}, 750);
 
 				});
