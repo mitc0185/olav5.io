@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://olav5.io/sitemap.xml
